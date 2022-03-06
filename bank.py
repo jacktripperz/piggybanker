@@ -132,28 +132,16 @@ def itterate(nextCycleId, nextCycleType):
     
     info = piggy_bank_info()
     piglets = info[2]
-    durationTimestamp = info[9][2]
-    compoundingStartedDate = datetime.fromtimestamp(durationTimestamp) # + timedelta(hours=24)
+    lastCompounded = info[4]
     bankTruffles = bank_truffles()
-    bonus = bank_bonus()
     trufflesToGet1Piglet = truffles_to_get_1_piglet()
     totalSupply = total_supply()
     lpBusdValue = dexToolsValues[0]/dexToolsValues[1]
     lpValue = (float(dexToolsValues[0])/float(totalSupply))*lpBusdValue*(bankTruffles/trufflesToGet1Piglet)
-    daysToAdd = 0
 
-    nextCompoundingDate = (datetime.today() + timedelta(days=daysToAdd)).replace(hour=compoundingStartedDate.hour, minute=compoundingStartedDate.minute, second=compoundingStartedDate.second)
-    date_format_str = '%d/%m/%Y %H:%M:%S'
-    
-    nextStr = nextCompoundingDate.strftime(date_format_str)
-    todayStr = datetime.today().strftime(date_format_str)
-
-    nextDate = datetime.strptime(nextStr, date_format_str)
-    todayDate = datetime.strptime(todayStr, date_format_str)
-    
-    diff = nextDate - todayDate
+    nextCompoundingDate = (datetime.fromtimestamp(lastCompounded) + timedelta(hours=24))
+    diff = nextCompoundingDate - datetime.today()
     secondsUntilCompounding = diff.total_seconds()
-    print(f"next: {secondsUntilCompounding}")
     
     dateTimeObj = datetime.now()
     timestampStr = dateTimeObj.strftime("[%d-%b-%Y (%H:%M:%S)]")
@@ -165,15 +153,14 @@ def itterate(nextCycleId, nextCycleType):
     print(f"{timestampStr} Piglets: {piglets}")
     print(f"{timestampStr} Truffles needed to get 1 piglet: {trufflesToGet1Piglet}")
     print(f"{timestampStr} Truffles generated: {bankTruffles}")
-    print(f"{timestampStr} Truffles needed for 1 piglet: {trufflesToGet1Piglet-bankTruffles}")
     print(f"{timestampStr} Truffles LP value: ${lpValue:.2f}")
     print(f"{timestampStr} Next compounding at: {nextCompoundingDate}")
     print("************************")
     
     cycleminimumTruffles = findCycleminimumTruffles(nextCycleId)
     
-    #if secondsUntilCompounding > start_polling_threshold_in_seconds:
-    #    sleep = secondsUntilCompounding + start_polling_threshold_in_seconds
+    if secondsUntilCompounding > start_polling_threshold_in_seconds:
+       sleep = secondsUntilCompounding + start_polling_threshold_in_seconds
             
     if bankTruffles >= trufflesToGet1Piglet: #secondsUntilCompounding + start_polling_threshold_in_seconds <= 0:
         if nextCycleType == "compound":
