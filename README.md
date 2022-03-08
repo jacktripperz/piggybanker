@@ -76,9 +76,9 @@ This terminal window will always need to remain open for the script to function.
 `python bank.py` again.
 
 If this script helps you, consider supporting me gifiting me some piglets: 
-**wallet:** *0x361472B5784e83fBF779b015f75ea0722741f304*
+- **wallet:** *0x361472B5784e83fBF779b015f75ea0722741f304*
 Or using my buddy referral code:
-[Animal Farm, PiggyBank](https://theanimal.farm/piggybank/0x361472B5784e83fBF779b015f75ea0722741f304)
+- [Animal Farm, PiggyBank](https://theanimal.farm/piggybank/0x361472B5784e83fBF779b015f75ea0722741f304)
 
 
 Other projects to take a look at:
