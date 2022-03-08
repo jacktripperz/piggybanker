@@ -72,6 +72,10 @@ def feed():
     txn = piggy_bank_contract.functions.feedPiglets(piggy_bank_id, wallet_public_addr).buildTransaction(c.get_tx_options(wallet_public_addr, 500000))
     return c.send_txn(txn, wallet_private_key)
 
+def get_truffles_lp_value(truffles):
+    lp = piggy_bank_contract.functions.calculateTruffleSell(truffles).call()
+    return lp/1000000000000000000
+
 def piggy_banks():
     return piggy_bank_contract.functions.getMyPiggyBanks(wallet_public_addr).call()
 
@@ -135,9 +139,9 @@ def itterate(nextCycleId, nextCycleType):
     lastCompounded = info[4]
     bankTruffles = bank_truffles()
     trufflesToGet1Piglet = truffles_to_get_1_piglet()
+    trufflesLpValue = get_truffles_lp_value(trufflesToGet1Piglet)
     totalSupply = total_supply()
-    lpBusdValue = dexToolsValues[0]/dexToolsValues[1]
-    lpValue = (float(dexToolsValues[0])/float(totalSupply))*lpBusdValue*(bankTruffles/trufflesToGet1Piglet)
+    lpValue = (float(dexToolsValues[0])/float(totalSupply))*trufflesLpValue*(bankTruffles/trufflesToGet1Piglet)
 
     nextCompoundingDate = (datetime.fromtimestamp(lastCompounded) + timedelta(hours=24))
     diff = nextCompoundingDate - datetime.today()
