@@ -81,7 +81,7 @@ Open up the `bank.py` and search for the section where the `cycle` is defined - 
 One cycle includes 3 inputs:
 - Id (1-indexed, meaning that the first cycle should always start with 1)
 - Type (either use `compound` or `sell`)
-- MinimumBnb (you might be able to reinvest because 24h has past but you only want to reinvest, when you have a minimum BNB of this value)
+- MinimumBnb (you might be able to compound because 24h has past but you only want to compound, when you have a minimum Piglets of this value)
 
 Each cycle is defined by one item. Set as many items you want - just make sure to increment the Id of each item. When the cycle ends, it starts again from the top.
 The following is an example of a cycle:
