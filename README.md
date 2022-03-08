@@ -57,13 +57,13 @@ $ python -m pip install python-dotenv
 
 ## Usage
 
-In a terminal window, navigate to the location where you saved all the files. Run the `hydrate.py` file.
+In a terminal window, navigate to the location where you saved all the files. Run the `bank.py` file.
 
 ```bash
 $ python bank.py
 ```
 
-This terminal window will always need to remain open for the autohydrater to function. If the terminal window closes, just execute
+This terminal window will always need to remain open for the script to function. If the terminal window closes, just execute
 `python bank.py` again.
 
 If this script helps you, consider supporting me gifiting me some piglets: 
