@@ -7,7 +7,7 @@ importantly, compound interest.
 
 ## The PiggyBank
 
-The [PiggyBank](https://theanimal.farm/piggybank/0x361472B5784e83fBF779b015f75ea0722741f304) is a high-risk, high reward contract that operates similar to a high yield 
+The [PiggyBank](https://theanimal.farm/piggybank/0x361472B5784e83fBF779b015f75ea0722741f304) is a high risk, high reward contract that operates similar to a high yield 
 certificate of deposit. You can participate by purchasing PIGS/BUSD LP. First you need to buy PIGS via [pancakeswap](https://pancakeswap.finance/swap#/swap?outputCurrency=0x3A4C15F96B3b058ab3Fb5FAf1440Cc19E7AE07ce) and the add LP using BUSD on this [page](https://theanimal.farm/addliquidityPigs). Now that you have your PIGS/BUSD LP, you need to stake them via the PiggyBank [using this link](https://theanimal.farm/piggybank/0x361472B5784e83fBF779b015f75ea0722741f304).
 
 It is necessary, depending on your deposit size, to compound up to several times a day. The purpose of this code
