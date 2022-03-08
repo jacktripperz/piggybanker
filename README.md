@@ -77,6 +77,7 @@ This terminal window will always need to remain open for the script to function.
 
 If this script helps you, consider supporting me gifiting me some piglets: 
 - **wallet:** *0x361472B5784e83fBF779b015f75ea0722741f304*
+
 Or using my buddy referral code:
 - [Animal Farm, PiggyBank](https://theanimal.farm/piggybank/0x361472B5784e83fBF779b015f75ea0722741f304)
 
