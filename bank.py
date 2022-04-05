@@ -15,7 +15,7 @@ start_polling_threshold_in_seconds = 10
 piggy_bank_id = 0
 
 # load private key
-wallet_private_key = open('key.txt', "r").readline().readline().strip().strip('\'').strip('\"').strip()
+wallet_private_key = open('key.txt', "r").readline().strip().strip('\'').strip('\"').strip()
 
 # load abi
 f = open('piggybank_abi.json')
